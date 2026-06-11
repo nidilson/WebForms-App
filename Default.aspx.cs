@@ -33,8 +33,9 @@ namespace WebForms_App
 			string prioridad = Prioridad.SelectedValue;
 
 			Solicitud solicitud = new Solicitud(nombre, email, titulo, categoria, categoriaPersonalizada, descripcion, prioridad);
+			string json = JsonConvert.SerializeObject(solicitud);
 
-			Response.Cookies.Add(new HttpCookie("solicitud", JsonConvert.SerializeObject(solicitud)));
+			Response.Cookies.Add(new HttpCookie("solicitud", Server.UrlEncode(JsonConvert.SerializeObject(solicitud))));
 			Response.Redirect("/Confirmacion");
 		}
 
@@ -44,11 +45,13 @@ namespace WebForms_App
 			{
 				CategoriaPersonalizada.Visible = true;
 				CategoriaPersonalizadaLabel.Visible = true;
+				CategoriaPersonalizadaValidator.Enabled = true;
 			}
 			else
 			{
 				CategoriaPersonalizada.Visible = false;
 				CategoriaPersonalizadaLabel.Visible = false;
+				CategoriaPersonalizadaValidator.Enabled = false;
 			}
 		}
 	}

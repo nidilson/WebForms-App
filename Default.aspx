@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebForms_App._Default" %>
+﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="WebForms_App._Default" ResponseEncoding="utf-8" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -50,7 +50,7 @@
                         <asp:Label ID="CategoriaPersonalizadaLabel" runat="server" Text="Escriba su propia categoría:" class="fw-bold" Visible="False"></asp:Label>
 
                         <asp:TextBox ID="CategoriaPersonalizada" runat="server" AutoCompleteType="None" class="w-100 border rounded-2 mw-100" Visible="False"></asp:TextBox>
-                        <asp:RequiredFieldValidator ID="CategoriaPersonalizadaValidator" runat="server" ErrorMessage="Categoría requerida" ControlToValidate="CategoriaPersonalizada" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                        <asp:RequiredFieldValidator ID="CategoriaPersonalizadaValidator" runat="server" ErrorMessage="Categoría requerida" ControlToValidate="CategoriaPersonalizada" Font-Size="Small" ForeColor="Red" Enabled="False"></asp:RequiredFieldValidator>
                     </div>
                     <div id="descripcion-problema" class="d-flex flex-column justify-content-start align-items-start py-1 w-100">
                         <asp:Label ID="Label7" runat="server" Text="Descripción detallada:" class="fw-bold"></asp:Label>

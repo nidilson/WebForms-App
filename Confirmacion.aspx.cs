@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using WebForms_App.Modelos;
+using Newtonsoft.Json;
 
 namespace WebForms_App
 {
@@ -11,7 +13,17 @@ namespace WebForms_App
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
+			string cookie = Server.UrlDecode(Request.Cookies.Get("solicitud")?.Value);
+			if (String.IsNullOrEmpty(cookie))
+				return;
+			Solicitud solicitud = JsonConvert.DeserializeObject<Solicitud>(cookie);
 
+			Nombre.Text = solicitud.Nombre;
+			Email.Text = solicitud.Email;
+			TituloProblema.Text = solicitud.Titulo;
+			Categoria.Text = solicitud.Categoria.Equals("Otros") ? $"Otro: {solicitud.CategoriaPersonalizada}": solicitud.Categoria;
+			Descripcion.Text = solicitud.Descripcion;
+			Prioridad.Text = solicitud.Prioridad;
 		}
 	}
 }
