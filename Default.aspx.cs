@@ -17,7 +17,11 @@ namespace WebForms_App
 		{
 
 		}
-
+		/// <summary>
+		/// Evento del botón Enviar Solicitud, el cual crea la solicitud
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		protected void Enviar_Click(object sender, EventArgs e)
 		{
 			if (!Page.IsValid)
@@ -41,6 +45,12 @@ namespace WebForms_App
 			Response.Redirect("/Confirmacion");
 		}
 
+		/// <summary>
+		/// Evento del Dropdown List, se ejecuta al haber un cambio de selección y muestra el campo para crear una categoría
+		/// personalizada en caso de que sea necesario
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
 		protected void Categoría_SelectedIndexChanged(object sender, EventArgs e)
 		{
 			if (Categoria.SelectedIndex == 3)

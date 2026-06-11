@@ -21,7 +21,10 @@
                     <div id="campo-email" class="d-flex flex-column justify-content-center align-items-start gap-2 w-100 h-100">
                         <asp:Label ID="Label3" runat="server" Text="Email:" class="fw-bold"></asp:Label>
                         <asp:TextBox ID="Email" runat="server" AutoCompleteType="Email" class="w-100 border rounded-2 mw-100"></asp:TextBox>
-                        <asp:RegularExpressionValidator ID="EmailValidator" runat="server" ErrorMessage="Correo no válido" ControlToValidate="Email" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" Font-Size="Small" ForeColor="Red"></asp:RegularExpressionValidator>
+                        <div class="d-flex">
+                            <asp:RegularExpressionValidator ID="EmailValidator" runat="server" ErrorMessage="Correo no válido" ControlToValidate="Email" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" Font-Size="Small" ForeColor="Red"></asp:RegularExpressionValidator>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="Email" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                        </div>
                     </div>
                 </div>
             </div>
