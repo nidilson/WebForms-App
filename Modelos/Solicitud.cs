@@ -7,6 +7,7 @@ namespace WebForms_App.Modelos
 {
 	public class Solicitud
 	{
+		public string Id { get; set; }
 		public string Nombre { get; set; }
 		public string Email { get; set; }
 		public string Titulo { get; set; }
@@ -15,8 +16,9 @@ namespace WebForms_App.Modelos
 		public string Descripcion { get; set; }
 		public string Prioridad { get; set; }
 
-		public Solicitud(string nombre, string email, string titulo, string categoria, string categoriaPersonalizada, string descripcion, string prioridad)
+		public Solicitud(string id, string nombre, string email, string titulo, string categoria, string categoriaPersonalizada, string descripcion, string prioridad)
 		{
+			Id = id;
 			Nombre = nombre;
 			Email = email;
 			Titulo = titulo;

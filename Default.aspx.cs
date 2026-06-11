@@ -32,7 +32,9 @@ namespace WebForms_App
 			string descripcion = Descripcion.Text;
 			string prioridad = Prioridad.SelectedValue;
 
-			Solicitud solicitud = new Solicitud(nombre, email, titulo, categoria, categoriaPersonalizada, descripcion, prioridad);
+			string id = Guid.NewGuid().ToString().Substring(0, 6);
+
+			Solicitud solicitud = new Solicitud(id, nombre, email, titulo, categoria, categoriaPersonalizada, descripcion, prioridad);
 			string json = JsonConvert.SerializeObject(solicitud);
 
 			Response.Cookies.Add(new HttpCookie("solicitud", Server.UrlEncode(JsonConvert.SerializeObject(solicitud))));

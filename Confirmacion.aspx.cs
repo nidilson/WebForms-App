@@ -18,6 +18,7 @@ namespace WebForms_App
 				return;
 			Solicitud solicitud = JsonConvert.DeserializeObject<Solicitud>(cookie);
 
+			IdConfirmacion.Text = $"Id: {solicitud.Id}";
 			Nombre.Text = solicitud.Nombre;
 			Email.Text = solicitud.Email;
 			TituloProblema.Text = solicitud.Titulo;

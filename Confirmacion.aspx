@@ -4,6 +4,7 @@
     <main class="d-flex flex-column justify-content-center align-items-center w-100 p-3">
     <section class="row" aria-labelledby="aspnetTitle">
         <h1 id="aspnetTitle">Confirmación de Solicitud</h1>
+        <asp:Label ID="IdConfirmacion" Font-Bold="True" runat="server" ForeColor="#00CC00" class="d-flex justify-content-center align-baseline align-items-center"></asp:Label>
     </section>
 
     <section class="row w-100 bg-light p-4 border border-secondary rounded d-flex flex-column justify-content-center align-items-center">
