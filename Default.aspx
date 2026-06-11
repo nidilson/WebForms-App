@@ -2,43 +2,75 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
-    <main>
+    <main class="d-flex flex-column justify-content-center align-items-center w-100 p-3">
         <section class="row" aria-labelledby="aspnetTitle">
-            <h1 id="aspnetTitle">ASP.NET</h1>
-            <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS, and JavaScript.</p>
-            <p><a href="http://www.asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+            <h1 id="aspnetTitle">Nueva Solicitud de Soporte</h1>
+            <p class="lead">Complete los detalles a continuación para que nuestro equipo técnico pueda asistirle</p>
         </section>
 
-        <div class="row">
-            <section class="col-md-4" aria-labelledby="gettingStartedTitle">
-                <h2 id="gettingStartedTitle">Getting started</h2>
-                <p>
-                    ASP.NET Web Forms lets you build dynamic websites using a familiar drag-and-drop, event-driven model.
-                A design surface and hundreds of controls and components let you rapidly build sophisticated, powerful UI-driven sites with data access.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301948">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="librariesTitle">
-                <h2 id="librariesTitle">Get more libraries</h2>
-                <p>
-                    NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301949">Learn more &raquo;</a>
-                </p>
-            </section>
-            <section class="col-md-4" aria-labelledby="hostingTitle">
-                <h2 id="hostingTitle">Web Hosting</h2>
-                <p>
-                    You can easily find a web hosting company that offers the right mix of features and price for your applications.
-                </p>
-                <p>
-                    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301950">Learn more &raquo;</a>
-                </p>
-            </section>
-        </div>
+        <section class="row w-100 bg-light p-4 border border-secondary rounded d-flex flex-column justify-content-center align-items-center">
+            <div id="datos-usuario-container">
+                <asp:Label ID="Label1" runat="server" Text="DATOS DEL USUARIO" class="h4 text-primary"></asp:Label>
+                <div id="datos" class="d-flex flex-column flex-md-row justify-content-start align-items-center py-3 w-100 gap-2 gap-md-4">
+                    <div id="campo-nombre" class="d-flex flex-column justify-content-center align-items-start gap-2 w-100 h-100">
+                        <asp:Label ID="Label2" runat="server" Text="Nombre Completo:" class="fw-bold"></asp:Label>
+
+                        <asp:TextBox ID="Nombre" runat="server" AutoCompleteType="FirstName" class="w-100 border rounded-2 mw-100"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="NombreValidator" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="Nombre" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
+                    <div id="campo-email" class="d-flex flex-column justify-content-center align-items-start gap-2 w-100 h-100">
+                        <asp:Label ID="Label3" runat="server" Text="Email:" class="fw-bold"></asp:Label>
+                        <asp:TextBox ID="Email" runat="server" AutoCompleteType="Email" class="w-100 border rounded-2 mw-100"></asp:TextBox>
+                        <asp:RegularExpressionValidator ID="EmailValidator" runat="server" ErrorMessage="Correo no válido" ControlToValidate="Email" ValidationExpression="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" Font-Size="Small" ForeColor="Red"></asp:RegularExpressionValidator>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+            <div id="detalle-problema-container">
+                <asp:Label ID="Label4" runat="server" Text="DETALLES DEL PROBLEMA" class="h4 text-primary"></asp:Label>
+                <div id="detalles">
+                    <div id="titulo-problema" class="d-flex flex-column justify-content-start align-items-start py-1 w-100">
+                        <asp:Label ID="Label5" runat="server" Text="Titulo del problema:" class="fw-bold"></asp:Label>
+
+                        <asp:TextBox ID="Titulo" runat="server" AutoCompleteType="None" class="w-100 border rounded-2 mw-100" MaxLength="230" ToolTip="Máximo 230 caracteres"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ErrorMessage="Este campo es obligatorio" ControlToValidate="Titulo" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
+                    <div id="categoria-problema" class="d-flex flex-column justify-content-start align-items-start py-1 w-100">
+                        <asp:Label ID="Label6" runat="server" Text="Categoría:" class="fw-bold"></asp:Label>
+
+                        <asp:DropDownList ID="Categoria" runat="server" class="w-100 border rounded-2 mw-100" OnSelectedIndexChanged="Categoría_SelectedIndexChanged" AutoPostBack="True">
+                            <asp:ListItem Text="Hardware" />
+                            <asp:ListItem Text="Software" />
+                            <asp:ListItem Text="Red" />
+                            <asp:ListItem Text="Otros" />
+                        </asp:DropDownList>
+                    </div>
+                    <div id="categoria-personalizada-problema" class="d-flex flex-column justify-content-start align-items-start py-1 w-100">
+                        <asp:Label ID="CategoriaPersonalizadaLabel" runat="server" Text="Escriba su propia categoría:" class="fw-bold" Visible="False"></asp:Label>
+
+                        <asp:TextBox ID="CategoriaPersonalizada" runat="server" AutoCompleteType="None" class="w-100 border rounded-2 mw-100" Visible="False"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="CategoriaPersonalizadaValidator" runat="server" ErrorMessage="Categoría requerida" ControlToValidate="CategoriaPersonalizada" Font-Size="Small" ForeColor="Red"></asp:RequiredFieldValidator>
+                    </div>
+                    <div id="descripcion-problema" class="d-flex flex-column justify-content-start align-items-start py-1 w-100">
+                        <asp:Label ID="Label7" runat="server" Text="Descripción detallada:" class="fw-bold"></asp:Label>
+
+                        <asp:TextBox ID="Descripcion" runat="server" Rows="4" TextMode="MultiLine" Width="281px" class="w-100 border rounded-2 mw-100"></asp:TextBox>
+                    </div>
+                    <div id="prioridad-problema" class="d-flex flex-column justify-content-start align-items-start py-1 w-100">
+                        <asp:Label ID="Label8" runat="server" Text="Nivel de prioridad:" class="fw-bold"></asp:Label>
+
+                        <asp:RadioButtonList ID="Prioridad" runat="server" class="d-md-flex justify-content-md-center align-items-md-center">
+                            <asp:ListItem Text="Bajo" Selected="True" />
+                            <asp:ListItem Text="Medio" />
+                            <asp:ListItem Text="Alto" />
+                            <asp:ListItem Text="Crítico" />
+                        </asp:RadioButtonList>
+                    </div>
+                </div>
+            </div>
+            <asp:Button ID="Enviar" runat="server" Text="Enviar Solicitud" class="btn btn-primary" OnClick="Enviar_Click"/>
+        </section>
     </main>
 
 </asp:Content>

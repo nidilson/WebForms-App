@@ -11,7 +11,7 @@ namespace WebForms_App
 {
 
 
-	public partial class _Default
+	public partial class Confirmacion
 	{
 
 		/// <summary>
@@ -39,16 +39,7 @@ namespace WebForms_App
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox Nombre;
-
-		/// <summary>
-		/// Control NombreValidator.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator NombreValidator;
+		protected global::System.Web.UI.WebControls.Label Nombre;
 
 		/// <summary>
 		/// Control Label3.
@@ -66,16 +57,7 @@ namespace WebForms_App
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox Email;
-
-		/// <summary>
-		/// Control EmailValidator.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RegularExpressionValidator EmailValidator;
+		protected global::System.Web.UI.WebControls.Label Email;
 
 		/// <summary>
 		/// Control Label4.
@@ -96,22 +78,13 @@ namespace WebForms_App
 		protected global::System.Web.UI.WebControls.Label Label5;
 
 		/// <summary>
-		/// Control Titulo.
+		/// Control TituloProblema.
 		/// </summary>
 		/// <remarks>
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox Titulo;
-
-		/// <summary>
-		/// Control RequiredFieldValidator2.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator2;
+		protected global::System.Web.UI.WebControls.Label TituloProblema;
 
 		/// <summary>
 		/// Control Label6.
@@ -129,34 +102,7 @@ namespace WebForms_App
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.DropDownList Categoria;
-
-		/// <summary>
-		/// Control CategoriaPersonalizadaLabel.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Label CategoriaPersonalizadaLabel;
-
-		/// <summary>
-		/// Control CategoriaPersonalizada.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox CategoriaPersonalizada;
-
-		/// <summary>
-		/// Control CategoriaPersonalizadaValidator.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.RequiredFieldValidator CategoriaPersonalizadaValidator;
+		protected global::System.Web.UI.WebControls.Label Categoria;
 
 		/// <summary>
 		/// Control Label7.
@@ -174,7 +120,7 @@ namespace WebForms_App
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.TextBox Descripcion;
+		protected global::System.Web.UI.WebControls.Label Descripcion;
 
 		/// <summary>
 		/// Control Label8.
@@ -192,15 +138,6 @@ namespace WebForms_App
 		/// Campo generado automáticamente.
 		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
 		/// </remarks>
-		protected global::System.Web.UI.WebControls.RadioButtonList Prioridad;
-
-		/// <summary>
-		/// Control Enviar.
-		/// </summary>
-		/// <remarks>
-		/// Campo generado automáticamente.
-		/// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-		/// </remarks>
-		protected global::System.Web.UI.WebControls.Button Enviar;
+		protected global::System.Web.UI.WebControls.Label Prioridad;
 	}
 }
